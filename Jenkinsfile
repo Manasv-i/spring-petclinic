@@ -2,22 +2,21 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
+        stage('Clone') {
             steps {
-                echo 'Checkout stage'
+                echo 'Cloning repo...'
             }
         }
 
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean install'
+                bat 'mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvnw.cmd test'
+                bat 'mvn test'
             }
         }
     }
