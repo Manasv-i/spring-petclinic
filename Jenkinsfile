@@ -11,15 +11,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh './mvnw clean install'
+                bat 'mvnw.cmd clean install'
             }
         }
 
         stage('Test') {
             steps {
-                sh './mvnw test'
+                bat 'mvnw.cmd test'
             }
         }
-
     }
 }
